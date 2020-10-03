@@ -12,17 +12,17 @@ RSpec.describe GuestList do
     let(:origin_lon) { -6.257664 } # Intercom Dublin's office lon
     subject          { guest_list.process(origin_lat, origin_lon) }
 
-    context 'there are customers close by' do
+    context 'when there are customers close by' do
       let(:lat) { '53.339428' }
       let(:lon) { '-6.257664' }
 
-      it 'returns name and ids of customers within 100 km of a given point' do
+      it 'returns name and id of customers within 100 km of a given point' do
         expect(subject.class).to eq(Array)
         expect(subject).to eq([{ 'name' => 'Alice Cahill', 'user_id' => 1 }, { 'name' => 'Christina McArdle', 'user_id' => 12 }])
       end
     end
 
-    context 'there are no customers close by' do
+    context 'when there are no customers close by' do
       let(:lat) { '51.92893' }
       let(:lon) { '-10.27699' }
       it 'returns an empty array' do

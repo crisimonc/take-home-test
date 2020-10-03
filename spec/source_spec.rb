@@ -15,7 +15,7 @@ RSpec.describe Source do
       end
     end
 
-    context 'when URL is valid' do
+    context 'when URL is invalid' do
       let(:url) { 'https.txt' }
 
       it 'return the error message' do
