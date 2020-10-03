@@ -8,7 +8,7 @@ To get the list of customers to invite run:
 ```
 ruby invitations_program.rb
 ```
-To test the program's individual functions:
+To test the program's individual functions run:
 ```
 rspec spec . -f d
 ```
